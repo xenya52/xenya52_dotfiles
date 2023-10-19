@@ -6,10 +6,12 @@ import re
 import socket
 import subprocess
 
-from libqtile import bar, layout, widget, hook
+from libqtile import bar, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
+
+from Core.Layouts import layouts
 
 import subprocess
 
@@ -133,20 +135,20 @@ for i in groups:
 #        LAYOUTS            #
 #---------------------------#
 
-layouts = [
-        layout.Max(
-                   margin=20,
-                   border_normal="EDA3B1",
-                   border_focus="8C367C",
-                   border_width=2,
-                   ),
-        layout.Columns(
-                       margin=20, 
-                       border_normal="EDA3B1", 
-                       border_focus="8C367C",
-                       border_width=2,
-                       ),
-]
+#layouts = [
+#        layout.Max(
+#                   margin=20,
+#                   border_normal="EDA3B1",
+#                   border_focus="8C367C",
+#                   border_width=2,
+#                   ),
+#        layout.Columns(
+#                       margin=20, 
+#                       border_normal="EDA3B1", 
+#                       border_focus="8C367C",
+#                       border_width=2,
+#                       ),
+#]
 
 #-----#
 # BAR #
