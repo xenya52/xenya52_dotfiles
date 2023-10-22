@@ -13,6 +13,7 @@ widget_defaults = dict(
     fontsize=15,
     padding=6,
 )
+extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
@@ -23,31 +24,13 @@ screens = [
         top=bar.Bar(
             [
                 widget.Sep(
-                    background="#33132D",
+                    background="#EDA3B1",
                     linewidth=0,
-                    padding=6,
-                ),
-                widget.Clock(
-                    background = "#33132D",
-                    foreground = "#EDA3B1",
-                    format = " %d/%m/%Y",
-                    update_interval = 60.0,
-                ),
-                widget.Clock(
-                    background = "#42193B",
-                    foreground = "#EDA3B1",
-                    format = " %H:%M",
-                    update_interval = 60.0,
-                ),
-
-                widget.Systray(
-                ),
-                widget.Prompt(
-                ),
-                widget.Spacer(
+                    padding=12,
                 ),
                 widget.TextBox(
                     text = '',
+                    background = "#EDA3B1",
                     foreground = "#EDA3B1",
                     padding = 0,
                     fontsize = 42,
@@ -56,6 +39,18 @@ screens = [
                     background="#EDA3B1",
                     filename="~/.config/qtile/Images/lucyProfilePicTransparent.png",
                     scale="true"
+                ),
+                widget.Clock(
+                    background = "#EDA3B1",
+                    foreground = "#8C367C",
+                    format = " %d/%m/%Y",
+                    update_interval = 60.0,
+                ),
+                widget.Clock(
+                    background = "#EDA3B1",
+                    foreground = "#8C367C",
+                    format = " %H:%M",
+                    update_interval = 60.0,
                 ),
                 widget.GroupBox(
                     background = "#EDA3B1",
@@ -67,11 +62,17 @@ screens = [
                     borderwidth=0,
                     padding = 0,
                 ),
+                widget.Systray(
+                    background="#EDA3B1",
+                ),
                 widget.TextBox(
                     text='',
                     foreground="#EDA3B1",
                     padding=0,
                     fontsize=42,
+                ),
+                widget.Prompt(
+                    foreground="#EDA3B1",
                 ),
                 widget.Spacer(
                 ),
@@ -161,12 +162,12 @@ screens = [
                 widget.Sep(
                     background = "#33132D",
                     linewidth=0,
-                    padding=6,
+                    padding=12,
                 ),
             ],
             24,
-            margin = [5, 5, 0, 5],
-            background = "#32323000",
+            background = "#32323200",
+            margin = [5,5,5,5],
             background_opacity = 0.5,
         ),
     ),
