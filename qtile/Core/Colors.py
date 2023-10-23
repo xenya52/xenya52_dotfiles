@@ -43,11 +43,11 @@ color22  #691A28
 color23  #54111D
 
 #PersonalBarColors
-color24  #4D474B
-color25  #595257
-color26  #665E64
-color27  #736A71
-color28  #80767D
-color29  #8C8189
-color30  #8C8189
-color31  #8C8189
+#Violet
+color31 #8C367C
+color32 #702B63
+color33 #612555
+#Pink
+color32 #FFB0BF
+color33 #E69EAC
+color34 #CC8C99

@@ -24,50 +24,57 @@ screens = [
         top=bar.Bar(
             [
                 widget.Sep(
-                    background="#EDA3B1",
+                    background="#8C367C",
                     linewidth=0,
                     padding=12,
                 ),
-                widget.TextBox(
-                    text = '',
-                    background = "#EDA3B1",
-                    foreground = "#EDA3B1",
-                    padding = 0,
-                    fontsize = 42,
-                ),
                 widget.Image(
-                    background="#EDA3B1",
+                    background="#8C367C",
                     filename="~/.config/qtile/Images/lucyProfilePicTransparent.png",
                     scale="true"
                 ),
+                widget.Systray(
+                    background="#8C367C",
+                ),
+                widget.TextBox(
+                    text='',
+                    background="#702B63",
+                    foreground="#8C367C",
+                    padding=0,
+                    fontsize=42,
+                ),
                 widget.Clock(
-                    background = "#EDA3B1",
-                    foreground = "#8C367C",
+                    background = "#702B63",
+                    foreground = "#EDA3B1",
                     format = " %d/%m/%Y",
                     update_interval = 60.0,
                 ),
                 widget.Clock(
-                    background = "#EDA3B1",
-                    foreground = "#8C367C",
+                    background = "#702B63",
+                    foreground = "#EDA3B1",
                     format = " %H:%M",
                     update_interval = 60.0,
                 ),
+                widget.TextBox(
+                    text='',
+                    background="#612556",
+                    foreground="#702B63",
+                    padding=0,
+                    fontsize=42,
+                ), 
                 widget.GroupBox(
-                    background = "#EDA3B1",
+                    background = "#612556",
                     inactive = "#521F49",
-                    active = "#8C367C",
+                    active = "#EDA3B1",
                     rounded=True,
                     highlight_color="#702B6333",
                     highlight_method="line",
                     borderwidth=0,
                     padding = 0,
                 ),
-                widget.Systray(
-                    background="#EDA3B1",
-                ),
                 widget.TextBox(
                     text='',
-                    foreground="#EDA3B1",
+                    foreground="#612556",
                     padding=0,
                     fontsize=42,
                 ),
@@ -77,7 +84,7 @@ screens = [
                 widget.Spacer(
                 ),
                 widget.TextBox(
-                    text='',
+                    text='',
                     foreground="#8C367C",
                     padding=0,
                     fontsize=42
@@ -88,7 +95,7 @@ screens = [
                     format="󰘚 {load_percent}%"
                 ),
                 widget.TextBox(
-                    text='',
+                    text='',
                     foreground="#702B63",
                     background="#8C367C",
                     padding=0,
@@ -101,7 +108,7 @@ screens = [
                     interval=1.0
                 ),
                 widget.TextBox(
-                    text='',
+                    text='',
                     background="#702B63",
                     foreground="#612556",
                     padding=0,
@@ -117,7 +124,7 @@ screens = [
                     foreground="#EDA2B1",
                 ),
                 widget.TextBox(
-                    text='',
+                    text='',
                     background="#612556",
                     foreground="#521F49",
                     padding=0,
@@ -134,7 +141,7 @@ screens = [
                     configured_keyboards = ['de','us'],
                 ),
                 widget.TextBox(
-                    text='',
+                    text='',
                     background="#521F49",
                     foreground="#42193B",
                     padding=0,
@@ -148,7 +155,7 @@ screens = [
                     scroll = True,
                 ),
                 widget.TextBox(
-                    text='',
+                    text='',
                     background = "#42193B",
                     foreground = "#33132D",
                     padding=0,
