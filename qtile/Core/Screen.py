@@ -24,46 +24,46 @@ screens = [
         top=bar.Bar(
             [
                 widget.Sep(
-                    background="#8C367C",
+                    background="#521F49",
                     linewidth=0,
                     padding=12,
                 ),
                 widget.Image(
-                    background="#8C367C",
+                    background="#521F49",
                     filename="~/.config/qtile/Images/lucyProfilePicTransparent.png",
                     scale="true"
                 ),
                 widget.Systray(
-                    background="#8C367C",
+                    background="#521F49",
                 ),
                 widget.TextBox(
                     text='',
-                    background="#702B63",
-                    foreground="#8C367C",
+                    background="#612555",
+                    foreground="#521F49",
                     padding=0,
                     fontsize=42,
                 ),
                 widget.Clock(
-                    background = "#702B63",
+                    background = "#612555",
                     foreground = "#EDA3B1",
                     format = " %d/%m/%Y",
                     update_interval = 60.0,
                 ),
                 widget.Clock(
-                    background = "#702B63",
+                    background = "#612555",
                     foreground = "#EDA3B1",
                     format = " %H:%M",
                     update_interval = 60.0,
                 ),
                 widget.TextBox(
                     text='',
-                    background="#612556",
-                    foreground="#702B63",
+                    background="#8C367C",
+                    foreground="#612555",
                     padding=0,
                     fontsize=42,
                 ), 
                 widget.GroupBox(
-                    background = "#612556",
+                    background = "#8C367C",
                     inactive = "#521F49",
                     active = "#EDA3B1",
                     rounded=True,
@@ -74,7 +74,7 @@ screens = [
                 ),
                 widget.TextBox(
                     text='',
-                    foreground="#612556",
+                    foreground="#8C367C",
                     padding=0,
                     fontsize=42,
                 ),
