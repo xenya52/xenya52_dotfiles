@@ -26,15 +26,12 @@ screens = [
                 widget.Sep(
                     background="#FC679E",
                     linewidth=0,
-                    padding=12,
+                    padding=6,
                 ),
                 widget.Image(
                     background="#FC679E",
-                    filename="~/.config/qtile/Images/lucyProfilePicTransparent.png",
+                    filename="~/.config/qtile/Images/lucyProfilePicRound.png",
                     scale="true"
-                ),
-                widget.Systray(
-                    background="#FC679E",
                 ),
                 widget.TextBox(
                     text='',
@@ -45,36 +42,43 @@ screens = [
                 ),
                 widget.Clock(
                     background = "#FF77A6",
-                    foreground = "#EDA3B1",
+                    foreground = "#000000",
                     format = " %d/%m/%Y",
                     update_interval = 60.0,
                 ),
+                widget.TextBox(
+                    text='',
+                    background="#FE82AC",
+                    foreground="#FF77A6",
+                    padding=0,
+                    fontsize=42,
+                ),
                 widget.Clock(
-                    background = "#FF77A6",
+                    background = "#FE82AC",
                     foreground = "#000000",
                     format = " %H:%M",
                     update_interval = 60.0,
                 ),
                 widget.TextBox(
                     text='',
-                    background="#FEA3BD",
-                    foreground="#FF77A6",
+                    background="#FD95B4",
+                    foreground="#FE82AC",
                     padding=0,
                     fontsize=42,
                 ), 
                 widget.GroupBox(
-                    background = "#FEA3BD",
-                    inactive = "#FD95B4",
+                    background = "#FD95B4",
+                    inactive = "#FE82AC",
                     active = "#000000",
                     rounded=True,
-                    highlight_color="#FEB2C8",
+                    highlight_color="#FEA3BD",
                     highlight_method="line",
                     borderwidth=0,
                     padding = 0,
                 ),
                 widget.TextBox(
                     text='',
-                    foreground="#FEA3BD",
+                    foreground="#FD95B4",
                     padding=0,
                     fontsize=42,
                 ),
@@ -82,6 +86,8 @@ screens = [
                     foreground="#EDA3B1",
                 ),
                 widget.Spacer(
+                ),
+                widget.Systray(
                 ),
                 widget.TextBox(
                     text='',
@@ -92,7 +98,12 @@ screens = [
                 widget.CPU(
                     background="#FEB2C8",
                     foreground="#000000",
-                    format="󰘚 {load_percent}%"
+                    format="󰘚 {load_percent}%",
+                ),
+                widget.ThermalZone(
+                    background="#FEB2C8",
+                    fgcolor_normal="#000000",
+                    fgcolor_high="#000000"
                 ),
                 widget.TextBox(
                     text='',
@@ -115,7 +126,7 @@ screens = [
                     fontsize=42
                 ),
                 widget.Battery(
-                    format="󰁺{char} {percent:1.0%} ",
+                    format="󰁺 {char} {percent:1.0%} ",
                     charge_char="↑",
                     discharge_char="↓",
                     full_char="!",
@@ -169,12 +180,12 @@ screens = [
                 widget.Sep(
                     background = "#FC679E",
                     linewidth=0,
-                    padding=12,
+                    padding=6,
                 ),
             ],
             24,
             background = "#32323200",
-            margin = [5,5,5,5],
+            margin = [5,5,0,5],
             background_opacity = 0.5,
         ),
     ),

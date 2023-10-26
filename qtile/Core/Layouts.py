@@ -8,7 +8,7 @@ from libqtile import layout
 from libqtile.config import Match
 
 layout_conf = {
-    "margin":20,
+    "margin":10,
     "border_normal":"EDA3B1",
     "border_focus":"EDA3B1",
     "border_width":2,   
