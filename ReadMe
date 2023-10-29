@@ -1,0 +1,10 @@
+.config = /home/"usr"/
+    installed synth-shell for TerminalUi
+    installed neofetch for TerminalStart
+    installed kitty as Terminal
+    installed picom for font
+.bashrc = /home/"usr"/
+    installed pokemon-colorscripts-git for Image
+    installed hyfetch for more performance on neofetch
+lightdm = /etc/
+    installed gnome-themes-extra for theme in lightdm-gtk-greeter
