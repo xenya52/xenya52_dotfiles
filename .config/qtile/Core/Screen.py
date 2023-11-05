@@ -185,7 +185,7 @@ screens = [
             ],
             24,
             background = "#32323200",
-            margin = [5,5,0,5],
+            margin = [10,10,0,10],
             background_opacity = 0.5,
         ),
     ),
