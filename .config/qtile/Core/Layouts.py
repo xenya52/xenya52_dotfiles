@@ -15,8 +15,8 @@ layout_conf = {
 }
 
 layouts = [
+    layout.RatioTile(**layout_conf),
     layout.Max(**layout_conf),
-    layout.Columns(**layout_conf),
 ]
 
 floating_layout = layout.Floating(
