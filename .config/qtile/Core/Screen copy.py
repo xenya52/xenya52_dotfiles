@@ -8,8 +8,6 @@ from libqtile import bar, widget, hook, layout
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 
-from Core.Colors import violet1, violet2, violet3, violet4, violet5, violet6, textColor
-
 widget_defaults = dict(
     font="JetBrainsMono",
     fontsize=15,
@@ -26,153 +24,104 @@ screens = [
         top=bar.Bar(
             [
                 widget.Sep(
-                    background=violet1,
+                    background="#FC679E",
                     linewidth=0,
                     padding=6,
                 ),
-                #Profile Icon
                 widget.Image(
-                    background=violet1,
+                    background="#FC679E",
                     filename="~/.config/qtile/Images/lucyProfilePicRound.png",
                     scale="true"
                 ),
                 widget.TextBox(
                     text='',
-                    background=violet2,
-                    foreground=violet1,
+                    background="#FF77A6",
+                    foreground="#FC679E",
                     padding=0,
                     fontsize=42,
                 ),
-
-                #CurrentDate
                 widget.Clock(
-                    background = violet2,
-                    foreground =  textColor,
+                    background = "#FF77A6",
+                    foreground = "#000000",
                     format = " %d/%m/%Y",
                     update_interval = 60.0,
                 ),
                 widget.TextBox(
                     text='',
-                    background=violet3,
-                    foreground=violet2,
+                    background="#FE82AC",
+                    foreground="#FF77A6",
                     padding=0,
                     fontsize=42,
                 ),
-
-                #CurrentClockTime
                 widget.Clock(
-                    background = violet3,
-                    foreground = textColor,
+                    background = "#FE82AC",
+                    foreground = "#000000",
                     format = " %H:%M",
                     update_interval = 60.0,
                 ),
                 widget.TextBox(
                     text='',
-                    background=violet4,
-                    foreground=violet3,
+                    background="#FD95B4",
+                    foreground="#FE82AC",
                     padding=0,
                     fontsize=42,
                 ), 
-
-                #Choosen Layout
-                widget.CurrentLayout(
-                    background = violet4,
-                    foreground = textColor,
-                ),
-                widget.TextBox(
-                    text='',
-                    background=violet5,
-                    foreground=violet4,
-                    padding=0,
-                    fontsize=42,
-                ), 
-
-                #Groups
                 widget.GroupBox(
-                    background = violet5,
-                    inactive = violet4,
-                    active = textColor,
+                    background = "#FD95B4",
+                    inactive = "#FE82AC",
+                    active = "#000000",
                     rounded=True,
-                    highlight_color= violet1,
+                    highlight_color="#FEA3BD",
                     highlight_method="line",
                     borderwidth=0,
                     padding = 0,
                 ),
                 widget.TextBox(
                     text='',
-                    background=violet6,
-                    foreground=violet5,
-                    padding=0,
-                    fontsize=42,
-                ), 
-                #Interactive Buttons
-                widget.TextBox(
-                    text='',
-                    background=violet6,
-                    foreground=violet6,
-                    mouse_callbacks= {},
+                    foreground="#FD95B4",
                     padding=0,
                     fontsize=42,
                 ),
-                widget.TextBox(
-                    text='',
-                    background=violet6,
-                    foreground=violet6,
-                    mouse_callbacks= {},
-                    padding=0,
-                    fontsize=42,
-                ), 
-                widget.TextBox(
-                    text='',
-                    background=violet6,
-                    foreground=violet6,
-                    mouse_callbacks= {},
-                    padding=0,
-                    fontsize=42,
-                ), 
-                widget.TextBox(
-                    text='',
-                    foreground=violet6,
-                    padding=0,
-                    fontsize=42,
-                ), 
-
-                #Prompts
+                widget.Prompt(
+                    foreground="#EDA3B1",
+                ),
                 widget.Spacer(
+                ),
+                widget.Systray(
                 ),
                 widget.TextBox(
                     text='',
-                    foreground=violet6,
+                    foreground="#FEB2C8",
                     padding=0,
                     fontsize=42
                 ),
                 widget.CPU(
-                    background=violet6,
-                    foreground=textColor,
+                    background="#FEB2C8",
+                    foreground="#000000",
                     format="󰘚 {load_percent}%",
                 ),
                 widget.ThermalZone(
-                    background=violet6,
-                    fgcolor_normal=textColor,
-                    fgcolor_high=textColor
+                    background="#FEB2C8",
+                    fgcolor_normal="#000000",
+                    fgcolor_high="#000000"
                 ),
                 widget.TextBox(
                     text='',
-                    foreground=violet5,
-                    background=violet6,
+                    foreground="#FEA3BD",
+                    background="#FEB2C8",
                     padding=0,
                     fontsize=42,
                 ),
                 widget.Memory(
                     format=" {MemUsed: .0f}{mm}",
-                    background=violet5,
-                    foreground=textColor,
+                    background="#FEA3BD",
+                    foreground="#000000",
                     interval=1.0
                 ),
                 widget.TextBox(
                     text='',
-                    background=violet5,
-                    foreground=violet4,
+                    background="#FEA3BD",
+                    foreground="#FD95B4",
                     padding=0,
                     fontsize=42
                 ),
@@ -182,85 +131,62 @@ screens = [
                     discharge_char="↓",
                     full_char="!",
                     low_foreground="#FF0001",
-                    background=violet4,
-                    foreground=textColor,
+                    background="#FD95B4",
+                    foreground="#000000",
                 ),
                 widget.TextBox(
                     text='',
-                    background=violet4,
-                    foreground=violet3,
+                    background="#FD95B4",
+                    foreground="#FE82AC",
                     padding=0,
                     fontsize=42
                 ),
                 widget.TextBox(
                     text=" ",
-                    foreground = textColor,
-                    background = violet3,
+                    foreground = "#000000",
+                    background = "#FE82AC",
                 ),
                 widget.KeyboardLayout(
-                    background=violet3,
-                    foreground=textColor,
+                    background="#FE82AC",
+                    foreground="#000000",
                     configured_keyboards = ['de','us'],
                 ),
                 widget.TextBox(
                     text='',
-                    background=violet3,
-                    foreground=violet2,
+                    background="#FE82AC",
+                    foreground="#FF77A6",
                     padding=0,
                     fontsize=42,
                 ),
                 widget.Backlight(
                     backlight_name = "intel_backlight",
                     format="󰍹 {percent:2.0%} ",
-                    background = violet2,
-                    foreground = textColor,
+                    background = "#FF77A6",
+                    foreground = "#000000",
                     scroll = True,
                 ),
                 widget.TextBox(
                     text='',
-                    background = violet2,
-                    foreground = violet1,
+                    background = "#FF77A6",
+                    foreground = "#FC679E",
                     padding=0,
                     fontsize=42
                 ),
                 widget.Volume(
-                    background = violet1,
-                    foreground = textColor,
+                    background ="#FC679E",
+                    foreground ="#000000",
                     fmt=" {} "
                 ),
                 widget.Sep(
-                    background = violet1,
+                    background = "#FC679E",
                     linewidth=0,
                     padding=6,
                 ),
             ],
             24,
-            background = "#EDA3B1",
-            border_width = 2,
-            border_color = "fc679e"
-            #margin = [10,10,0,10],
-            #background_opacity = 0.5,
+            background = "#32323200",
+            margin = [10,10,0,10],
+            background_opacity = 0.5,
         ),
-        bottom=bar.Bar(
-            [
-                widget.Sep(
-                    linewidth=0,
-                    padding=6,
-                ),
-                widget.Prompt(
-                    foreground = "#EDA3B1",
-                ),
-                widget.Spacer(
-                ),
-                widget.Systray(
-                ),
-                widget.Sep(
-                    linewidth=0,
-                    padding=6,
-                ),
-            ],
-            24,
-            background = "#EDA3B100",
-            ),
     ),
 ]
