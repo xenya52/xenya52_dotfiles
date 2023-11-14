@@ -9,9 +9,9 @@ from libqtile.command import lazy
 
 groups = []
 
-group_names = ["1", "2", "3", "4","5"]
-group_labels = ["[󰣇 ]", "[ ]", "[ ]", "[󱓧 ]","[ ]"]
-group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall","monadtall","monadtall"]
+group_names = ["1", "2", "3"]
+group_labels = ["[ぜ]", "[に]", "[ぁ]"]
+group_layouts = ["ratiotile", "ratiotile", "ratiotile"]
 
 for i in range(len(group_names)):
     groups.append (

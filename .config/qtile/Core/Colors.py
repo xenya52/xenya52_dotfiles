@@ -5,4 +5,4 @@ violet4 = "#fd95b4"
 violet5 = "#fea3bd"
 violet6 = "#feb2c8"
 
-textColor = "#323232"
+textColor_dark = "#2c2729"

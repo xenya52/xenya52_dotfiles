@@ -8,3 +8,4 @@
     installed hyfetch for more performance on neofetch
 lightdm = /etc/
     installed gnome-themes-extra for theme in lightdm-gtk-greeter
+    in my gitignore are my icons for apps

@@ -13,7 +13,6 @@ mod = "mod4"
 terminal = "kitty"
 browser = "firefox"
 notes = "obsidian"
-devEnviroment = "intellij-idea-ultimate"
 code = "code"
 calculator = "qalculate-gtk"
 rofi = "rofi -show drun"
@@ -59,7 +58,6 @@ keys = [
     Key([mod], "F9", lazy.spawn("xbacklight -inc 5")),
     Key([mod], "f", lazy.spawn(browser), desc="Launch browser"),
     Key([mod], "o", lazy.spawn(notes), desc="Launch obsidian"),
-    Key([mod], "i", lazy.spawn(devEnviroment), desc="Launch intellij"),
     Key([mod], "c", lazy.spawn(code), desc="Launch vsCode"),
     Key([mod], "x", lazy.spawn(calculator), desc="Launch calculator"),
     #############
@@ -68,8 +66,9 @@ keys = [
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    #Key([mod, "control"], "q", lazy.spawn(lock), desc ="Locking you screen"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    #Key([mod, "contrrol"], "q", lazy.spawn(lock), desc ="Locking you screen"),
+    Key([mod], "r", lazy.spawn("rofi -show run"), desc="Spawn a command using a prompt widget"),
+    #Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 ]
 
 for i in groups:

@@ -8,7 +8,7 @@ from libqtile import bar, widget, hook, layout
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 
-from Core.Colors import violet1, violet2, violet3, violet4, violet5, violet6, textColor
+from Core.Colors import violet1, violet2, violet3, violet4, violet5, violet6, textColor_dark
 
 widget_defaults = dict(
     font="JetBrainsMono",
@@ -36,6 +36,15 @@ screens = [
                     filename="~/.config/qtile/Images/lucyProfilePicRound.png",
                     scale="true"
                 ),
+                widget.Battery(
+                    format="{char}{percent:1.0%}",
+                    charge_char="↑",
+                    discharge_char="↓",
+                    full_char="!",
+                    low_foreground="#FF0001",
+                    background=violet1,
+                    foreground=textColor_dark,
+                ),
                 widget.TextBox(
                     text='',
                     background=violet2,
@@ -47,7 +56,7 @@ screens = [
                 #CurrentDate
                 widget.Clock(
                     background = violet2,
-                    foreground =  textColor,
+                    foreground =  textColor_dark,
                     format = " %d/%m/%Y",
                     update_interval = 60.0,
                 ),
@@ -62,7 +71,7 @@ screens = [
                 #CurrentClockTime
                 widget.Clock(
                     background = violet3,
-                    foreground = textColor,
+                    foreground = textColor_dark,
                     format = " %H:%M",
                     update_interval = 60.0,
                 ),
@@ -73,11 +82,12 @@ screens = [
                     padding=0,
                     fontsize=42,
                 ), 
-
-                #Choosen Layout
-                widget.CurrentLayout(
-                    background = violet4,
-                    foreground = textColor,
+                #Weather
+                widget.OpenWeather(
+                    background=violet4,
+                    foreground=textColor_dark,
+                    location='Regensburg', 
+                    format='{icon} {main_temp}°{units_temperature} {humidity}%'
                 ),
                 widget.TextBox(
                     text='',
@@ -86,18 +96,14 @@ screens = [
                     padding=0,
                     fontsize=42,
                 ), 
-
-                #Groups
-                widget.GroupBox(
-                    background = violet5,
-                    inactive = violet4,
-                    active = textColor,
-                    rounded=True,
-                    highlight_color= violet1,
-                    highlight_method="line",
-                    borderwidth=0,
-                    padding = 0,
+                #Memory
+                widget.Memory(
+                    format=" {MemUsed: .0f}{mm}",
+                    background=violet5,
+                    foreground=textColor_dark,
+                    interval=1.0
                 ),
+                
                 widget.TextBox(
                     text='',
                     background=violet6,
@@ -105,31 +111,18 @@ screens = [
                     padding=0,
                     fontsize=42,
                 ), 
-                #Interactive Buttons
-                widget.TextBox(
-                    text='',
+
+                widget.CPU(
                     background=violet6,
-                    foreground=violet6,
-                    mouse_callbacks= {},
-                    padding=0,
-                    fontsize=42,
+                    foreground=textColor_dark,
+                    format="󰘚 {load_percent}%",
                 ),
-                widget.TextBox(
-                    text='',
+                widget.ThermalZone(
                     background=violet6,
-                    foreground=violet6,
-                    mouse_callbacks= {},
-                    padding=0,
-                    fontsize=42,
-                ), 
-                widget.TextBox(
-                    text='',
-                    background=violet6,
-                    foreground=violet6,
-                    mouse_callbacks= {},
-                    padding=0,
-                    fontsize=42,
-                ), 
+                    fgcolor_normal=textColor_dark,
+                    fgcolor_high=textColor_dark
+                ),
+                
                 widget.TextBox(
                     text='',
                     foreground=violet6,
@@ -138,6 +131,9 @@ screens = [
                 ), 
 
                 #Prompts
+                widget.Prompt(
+                    foreground = violet6,
+                ),
                 widget.Spacer(
                 ),
                 widget.TextBox(
@@ -146,16 +142,12 @@ screens = [
                     padding=0,
                     fontsize=42
                 ),
-                widget.CPU(
-                    background=violet6,
-                    foreground=textColor,
-                    format="󰘚 {load_percent}%",
+                #Choosen Layout
+                widget.CurrentLayout(
+                    background = violet6,
+                    foreground = textColor_dark,
                 ),
-                widget.ThermalZone(
-                    background=violet6,
-                    fgcolor_normal=textColor,
-                    fgcolor_high=textColor
-                ),
+                
                 widget.TextBox(
                     text='',
                     foreground=violet5,
@@ -163,11 +155,16 @@ screens = [
                     padding=0,
                     fontsize=42,
                 ),
-                widget.Memory(
-                    format=" {MemUsed: .0f}{mm}",
-                    background=violet5,
-                    foreground=textColor,
-                    interval=1.0
+                #Groups
+                widget.GroupBox(
+                    background = violet5,
+                    inactive = violet4,
+                    active = textColor_dark,
+                    rounded=True,
+                    highlight_color= violet1,
+                    highlight_method="line",
+                    borderwidth=0,
+                    padding = 0,
                 ),
                 widget.TextBox(
                     text='',
@@ -176,14 +173,16 @@ screens = [
                     padding=0,
                     fontsize=42
                 ),
-                widget.Battery(
-                    format="󰁺 {char} {percent:1.0%} ",
-                    charge_char="↑",
-                    discharge_char="↓",
-                    full_char="!",
-                    low_foreground="#FF0001",
+                widget.Systray(
+                    foreground=textColor_dark,
                     background=violet4,
-                    foreground=textColor,
+                ),
+                #bpytop
+                widget.TextBox(
+                    text="",
+                    background=violet4,
+                    foreground=textColor_dark,
+                    mouse_callbacks={"Button1": lazy.spawn("rofi -show run"),}
                 ),
                 widget.TextBox(
                     text='',
@@ -194,12 +193,12 @@ screens = [
                 ),
                 widget.TextBox(
                     text=" ",
-                    foreground = textColor,
+                    foreground = textColor_dark,
                     background = violet3,
                 ),
                 widget.KeyboardLayout(
                     background=violet3,
-                    foreground=textColor,
+                    foreground=textColor_dark,
                     configured_keyboards = ['de','us'],
                 ),
                 widget.TextBox(
@@ -213,8 +212,7 @@ screens = [
                     backlight_name = "intel_backlight",
                     format="󰍹 {percent:2.0%} ",
                     background = violet2,
-                    foreground = textColor,
-                    scroll = True,
+                    foreground = textColor_dark,
                 ),
                 widget.TextBox(
                     text='',
@@ -225,7 +223,7 @@ screens = [
                 ),
                 widget.Volume(
                     background = violet1,
-                    foreground = textColor,
+                    foreground = textColor_dark,
                     fmt=" {} "
                 ),
                 widget.Sep(
@@ -235,32 +233,11 @@ screens = [
                 ),
             ],
             24,
-            background = "#EDA3B1",
-            border_width = 2,
-            border_color = "fc679e"
+            background = textColor_dark,
+            border_width = [0,0,2,0],
+            border_color = violet1,
             #margin = [10,10,0,10],
             #background_opacity = 0.5,
         ),
-        bottom=bar.Bar(
-            [
-                widget.Sep(
-                    linewidth=0,
-                    padding=6,
-                ),
-                widget.Prompt(
-                    foreground = "#EDA3B1",
-                ),
-                widget.Spacer(
-                ),
-                widget.Systray(
-                ),
-                widget.Sep(
-                    linewidth=0,
-                    padding=6,
-                ),
-            ],
-            24,
-            background = "#EDA3B100",
-            ),
     ),
 ]
