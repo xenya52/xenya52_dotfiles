@@ -31,7 +31,7 @@ element-icon, element-text, scrollbar {
 }
 
 window {
-  location : northeast;
+  location : nortwest;
   width    : 400px;
   x-offset : 4px;
   y-offset : 26px;

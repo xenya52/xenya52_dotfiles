@@ -34,7 +34,10 @@ screens = [
                 widget.Image(
                     background=violet1,
                     filename="~/.config/qtile/Images/lucyProfilePicRound.png",
-                    scale="true"
+                    scale="true",
+                    text="",
+                    foreground=textColor_dark,
+                    mouse_callbacks={"Button1": lazy.spawn("rofi -show run"),}
                 ),
                 widget.Battery(
                     format="{char}{percent:1.0%}",
@@ -87,7 +90,7 @@ screens = [
                     background=violet4,
                     foreground=textColor_dark,
                     location='Regensburg', 
-                    format='{icon} {main_temp}°{units_temperature} {humidity}%'
+                    format='{main_temp}°{units_temperature} {humidity}%'
                 ),
                 widget.TextBox(
                     text='',
@@ -136,6 +139,24 @@ screens = [
                 ),
                 widget.Spacer(
                 ),
+                widget.Systray(
+                ),
+                #discord
+                widget.Image(
+                    filename="~/.config/qtile/Images/TopBar_Icons/discord.png",
+                    scale="true",
+                    text="",
+                    foreground=textColor_dark,
+                    mouse_callbacks={"Button1": lazy.spawn("firefox https://discord.com/channels/@me"),}
+                ),
+                #fluffychat
+                widget.Image(
+                    filename="~/.config/qtile/Images/TopBar_Icons/fluffychat.png",
+                    scale="true",
+                    text="",
+                    foreground=textColor_dark,
+                    mouse_callbacks={"Button1": lazy.spawn("firefox https://fluffychat.im/web/#/rooms/settings"),}
+                ),
                 widget.TextBox(
                     text='',
                     foreground=violet6,
@@ -172,17 +193,6 @@ screens = [
                     foreground=violet4,
                     padding=0,
                     fontsize=42
-                ),
-                widget.Systray(
-                    foreground=textColor_dark,
-                    background=violet4,
-                ),
-                #bpytop
-                widget.TextBox(
-                    text="",
-                    background=violet4,
-                    foreground=textColor_dark,
-                    mouse_callbacks={"Button1": lazy.spawn("rofi -show run"),}
                 ),
                 widget.TextBox(
                     text='',
