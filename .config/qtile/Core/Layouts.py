@@ -15,7 +15,7 @@ layout_conf = {
 }
 
 layouts = [
-    layout.RatioTile(**layout_conf),
+    layout.Tile(**layout_conf),
     layout.Max(**layout_conf),
 ]
 

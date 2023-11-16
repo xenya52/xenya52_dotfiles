@@ -20,7 +20,7 @@ extension_defaults = widget_defaults.copy()
 screens = [
     Screen(
         
-        wallpaper = "~/.config/qtile/Images/wallpaper.jpg",
+        wallpaper = "~/.config/qtile/Images/wallpaperPixel.jpg",
         wallpaper_mode = "stretch",
 
         top=bar.Bar(
@@ -53,29 +53,30 @@ screens = [
                     background=violet2,
                     foreground=violet1,
                     padding=0,
-                    fontsize=42,
+                    fontsize=20,
                 ),
 
                 #CurrentDate
                 widget.Clock(
                     background = violet2,
                     foreground =  textColor_dark,
-                    format = " %d/%m/%Y",
+                    format = "%d/%m/%Y",
                     update_interval = 60.0,
+                    mouse_callbacks={"Button1":lazy.spawn("firefox https://calendar.google.com/calendar/u/0/r?pli=1"),}
                 ),
                 widget.TextBox(
                     text='',
                     background=violet3,
                     foreground=violet2,
                     padding=0,
-                    fontsize=42,
+                    fontsize=20,
                 ),
 
                 #CurrentClockTime
                 widget.Clock(
                     background = violet3,
                     foreground = textColor_dark,
-                    format = " %H:%M",
+                    format = "%H:%M",
                     update_interval = 60.0,
                 ),
                 widget.TextBox(
@@ -83,25 +84,25 @@ screens = [
                     background=violet4,
                     foreground=violet3,
                     padding=0,
-                    fontsize=42,
+                    fontsize=20,
                 ), 
                 #Weather
                 widget.OpenWeather(
                     background=violet4,
                     foreground=textColor_dark,
                     location='Regensburg', 
-                    format='{main_temp}°{units_temperature} {humidity}%'
+                    format='{icon}{main_temp}°{units_temperature} {humidity}%'
                 ),
                 widget.TextBox(
                     text='',
                     background=violet5,
                     foreground=violet4,
                     padding=0,
-                    fontsize=42,
+                    fontsize=20,
                 ), 
                 #Memory
                 widget.Memory(
-                    format=" {MemUsed: .0f}{mm}",
+                    format="{MemUsed: .0f}{mm}",
                     background=violet5,
                     foreground=textColor_dark,
                     interval=1.0
@@ -112,7 +113,7 @@ screens = [
                     background=violet6,
                     foreground=violet5,
                     padding=0,
-                    fontsize=42,
+                    fontsize=20,
                 ), 
 
                 widget.CPU(
@@ -130,7 +131,7 @@ screens = [
                     text='',
                     foreground=violet6,
                     padding=0,
-                    fontsize=42,
+                    fontsize=20,
                 ), 
 
                 #Prompts
@@ -139,29 +140,11 @@ screens = [
                 ),
                 widget.Spacer(
                 ),
-                widget.Systray(
-                ),
-                #discord
-                widget.Image(
-                    filename="~/.config/qtile/Images/TopBar_Icons/discord.png",
-                    scale="true",
-                    text="",
-                    foreground=textColor_dark,
-                    mouse_callbacks={"Button1": lazy.spawn("firefox https://discord.com/channels/@me"),}
-                ),
-                #fluffychat
-                widget.Image(
-                    filename="~/.config/qtile/Images/TopBar_Icons/fluffychat.png",
-                    scale="true",
-                    text="",
-                    foreground=textColor_dark,
-                    mouse_callbacks={"Button1": lazy.spawn("firefox https://fluffychat.im/web/#/rooms/settings"),}
-                ),
                 widget.TextBox(
                     text='',
                     foreground=violet6,
                     padding=0,
-                    fontsize=42
+                    fontsize=20
                 ),
                 #Choosen Layout
                 widget.CurrentLayout(
@@ -174,7 +157,7 @@ screens = [
                     foreground=violet5,
                     background=violet6,
                     padding=0,
-                    fontsize=42,
+                    fontsize=20,
                 ),
                 #Groups
                 widget.GroupBox(
@@ -192,14 +175,20 @@ screens = [
                     background=violet5,
                     foreground=violet4,
                     padding=0,
-                    fontsize=42
+                    fontsize=20
+                ),
+                widget.Wlan(
+                    format='{essid}',
+                    background=violet4,
+                    foreground=textColor_dark,
+                    mouse_callbacks={"Button1":lazy.spawn("kitty nmtui"),}
                 ),
                 widget.TextBox(
                     text='',
                     background=violet4,
                     foreground=violet3,
                     padding=0,
-                    fontsize=42
+                    fontsize=20
                 ),
                 widget.TextBox(
                     text=" ",
@@ -216,7 +205,7 @@ screens = [
                     background=violet3,
                     foreground=violet2,
                     padding=0,
-                    fontsize=42,
+                    fontsize=20,
                 ),
                 widget.Backlight(
                     backlight_name = "intel_backlight",
@@ -229,7 +218,7 @@ screens = [
                     background = violet2,
                     foreground = violet1,
                     padding=0,
-                    fontsize=42
+                    fontsize=20
                 ),
                 widget.Volume(
                     background = violet1,
@@ -242,10 +231,10 @@ screens = [
                     padding=6,
                 ),
             ],
-            24,
-            background = textColor_dark,
-            border_width = [0,0,2,0],
-            border_color = violet1,
+            22,
+            background = "00000000",
+            #border_width = [0,0,2,0],
+            #border_color = violet1,
             #margin = [10,10,0,10],
             #background_opacity = 0.5,
         ),
