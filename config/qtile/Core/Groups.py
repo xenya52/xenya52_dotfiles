@@ -11,7 +11,7 @@ groups = []
 
 group_names = ["1", "2", "3"]
 group_labels = ["[ぜ]", "[に]", "[ぁ]"]
-group_layouts = ["ratiotile", "ratiotile", "ratiotile"]
+group_layouts = ["tile", "tile", "tile"]
 
 for i in range(len(group_names)):
     groups.append (
