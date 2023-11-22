@@ -31,10 +31,10 @@ element-icon, element-text, scrollbar {
 }
 
 window {
-  location : nortwest;
-  width    : 400px;
-  x-offset : 4px;
-  y-offset : 26px;
+  location : northeast;
+  width    : 512px;
+  x-offset : 3px;
+  y-offset : 19px;
 
   background-color: @bg1;
   border: 2px;
@@ -61,7 +61,7 @@ icon-search {
 }
 
 textbox {
-  padding          : 4px 8px;
+  padding          : 8px 8px;
   background-color : @bg2;
 }
 

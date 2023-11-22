@@ -30,15 +30,6 @@ screens = [
                     linewidth=0,
                     padding=6,
                 ),
-                #Profile Icon
-                widget.Image(
-                    background=violet1,
-                    filename="~/.config/qtile/Images/lucyProfilePicRound.png",
-                    scale="true",
-                    text="",
-                    foreground=textColor_dark,
-                    mouse_callbacks={"Button1": lazy.spawn("rofi -show run"),}
-                ),
                 widget.Battery(
                     format="{char}{percent:1.0%}",
                     charge_char="↑",
@@ -141,6 +132,9 @@ screens = [
                 ),
                 widget.Spacer(
                 ),
+                widget.Systray(
+
+                ),
                 widget.TextBox(
                     text='',
                     foreground=violet6,
@@ -178,9 +172,11 @@ screens = [
                     padding=0,
                     fontsize=20
                 ),
-                widget.Notify(
+                widget.TextBox(
+                    text='',
                     background=violet4,
                     foreground=textColor_dark,
+                    mouse_callbacks={"Button1":lazy.spawn("rofi -show drun"),}
                 ),
                 widget.TextBox(
                     text='',
