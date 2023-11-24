@@ -61,12 +61,14 @@ screens = [
                     foreground=violet2,
                     padding=0,
                     fontsize=20,
-                ),
-                widget.Wlan(
-                    format='',
+                ), 
+                #Weather
+                widget.OpenWeather(
                     background=violet3,
                     foreground=textColor_dark,
-                    mouse_callbacks={"Button1":lazy.spawn("kitty nmtui"),}
+                    location='Regensburg', 
+                    format='{icon}{main_temp}°{units_temperature} {humidity}%',
+                    mouse_callbacks={"Button1":lazy.spawn("kitty curl wttr.in/Regensburg sleep 10")}
                 ),
                 widget.TextBox(
                     text='',
@@ -75,25 +77,10 @@ screens = [
                     padding=0,
                     fontsize=20,
                 ), 
-                #Weather
-                widget.OpenWeather(
-                    background=violet4,
-                    foreground=textColor_dark,
-                    location='Regensburg', 
-                    format='{icon}{main_temp}°{units_temperature} {humidity}%',
-                    mouse_callbacks={"Button1":lazy.spawn("kitty curl wttr.in/Regensburg sleep 10")}
-                ),
-                widget.TextBox(
-                    text='',
-                    background=violet5,
-                    foreground=violet4,
-                    padding=0,
-                    fontsize=20,
-                ), 
                 #Memory
                 widget.Memory(
                     format="{MemUsed: .0f}{mm}",
-                    background=violet5,
+                    background=violet4,
                     foreground=textColor_dark,
                     interval=1.0,
                     mouse_callbacks={"Button1":lazy.spawn("kitty ncdu /"),}
@@ -101,82 +88,64 @@ screens = [
                 
                 widget.TextBox(
                     text='',
-                    background=violet6,
-                    foreground=violet5,
+                    background=violet5,
+                    foreground=violet4,
                     padding=0,
                     fontsize=20,
                 ), 
 
                 widget.CPU(
-                    background=violet6,
+                    background=violet5,
                     foreground=textColor_dark,
                     format="󰘚 {load_percent}%",
                     mouse_callbacks={"Button1":lazy.spawn("kitty bpytop"),}
                 ),
                 widget.ThermalZone(
-                    background=violet6,
+                    background=violet5,
                     fgcolor_normal=textColor_dark,
                     fgcolor_high=textColor_dark
                 ),
                 
                 widget.TextBox(
                     text='',
-                    foreground=violet6,
+                    foreground=violet5,
                     padding=0,
                     fontsize=20,
-                ), 
+                ),
 
-                #Prompts
-                widget.Prompt(
-                    foreground = violet6,
-                ),
-                widget.Spacer(
-                ),
-                widget.Systray(
+                widget.Spacer(),
 
-                ),
+
+                widget.Systray(),
                 widget.TextBox(
                     text='',
-                    foreground=violet6,
+                    foreground=violet5,
                     padding=0,
                     fontsize=20
                 ),
                 #Choosen Layout
                 widget.CurrentLayout(
-                    background = violet6,
+                    background = violet5,
                     foreground = textColor_dark,
                 ),
                 
                 widget.TextBox(
                     text='',
-                    foreground=violet5,
-                    background=violet6,
+                    foreground=violet4,
+                    background=violet5,
                     padding=0,
                     fontsize=20,
                 ),
                 #Groups
                 widget.GroupBox(
-                    background = violet5,
-                    inactive = violet4,
+                    background = violet4,
+                    inactive = violet3,
                     active = textColor_dark,
                     rounded=True,
                     highlight_color= violet1,
                     highlight_method="line",
                     borderwidth=0,
                     padding = 0,
-                ),
-                widget.TextBox(
-                    text='',
-                    background=violet5,
-                    foreground=violet4,
-                    padding=0,
-                    fontsize=20
-                ),
-                widget.TextBox(
-                    text='',
-                    background=violet4,
-                    foreground=textColor_dark,
-                    mouse_callbacks={"Button1":lazy.spawn("rofi -show drun"),}
                 ),
                 widget.TextBox(
                     text='',
@@ -230,7 +199,7 @@ screens = [
             background = "00000000",
             #border_width = [0,0,2,0],
             #border_color = violet1,
-            #margin = [10,10,0,10],
+            #margin = [5,5,0,5],
             #background_opacity = 0.5,
         ),
     ),
