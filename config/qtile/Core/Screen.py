@@ -196,7 +196,7 @@ screens = [
                 ),
             ],
             22,
-            background = "00000000",
+            background = "aa698b",
             #border_width = [0,0,2,0],
             #border_color = violet1,
             #margin = [5,5,0,5],
