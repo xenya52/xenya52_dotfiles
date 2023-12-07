@@ -4,12 +4,12 @@ from libqtile.lazy import lazy
 
 from Core.Colors import violet1, violet2, violet3, violet4, violet5, violet6, textColor_dark
 
-
-primary_widgets = [
-    widget.Sep(
-                background=violet1,
-                linewidth=0,
-                padding=6,
+top=bar.Bar(
+            [
+                widget.Sep(
+                    background=violet1,
+                    linewidth=0,
+                    padding=6,
                 ),
                 widget.Battery(
                     format="{char}{percent:1.0%}",
@@ -175,4 +175,11 @@ primary_widgets = [
                     linewidth=0,
                     padding=6,
                 ),
-]
+            ],
+            22,
+            background = "aa698b",
+            #border_width = [0,0,2,0],
+            #border_color = violet1,
+            #margin = [5,5,0,5],
+            #background_opacity = 0.5,
+        ),
