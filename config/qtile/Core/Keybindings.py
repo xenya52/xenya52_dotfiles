@@ -56,10 +56,10 @@ keys = [
     Key([mod], "F6", lazy.spawn("pactl -- set-sink-volume 0 +5%")),
     Key([mod], "F8", lazy.spawn("xbacklight -dec 5")),
     Key([mod], "F9", lazy.spawn("xbacklight -inc 5")),
-    Key([mod], "f", lazy.spawn(browser), desc="Launch browser"),
-    Key([mod], "o", lazy.spawn(notes), desc="Launch obsidian"),
-    Key([mod], "c", lazy.spawn(code), desc="Launch vsCode"),
-    Key([mod], "l", lazy.spawn(lockscreen), desc="Locks the screen"),
+    #Key([mod], "f", lazy.spawn(browser), desc="Launch browser"),
+    #Key([mod], "o", lazy.spawn(notes), desc="Launch obsidian"),
+    #Key([mod], "c", lazy.spawn(code), desc="Launch vsCode"),
+    #Key([mod], "l", lazy.spawn(lockscreen), desc="Locks the screen"),
     #############
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),

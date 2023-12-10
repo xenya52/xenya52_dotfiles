@@ -20,7 +20,7 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        
+        laptop_widgets,
         wallpaper = "~/.config/qtile/Images/wallpaperPixel.jpg",
         wallpaper_mode = "stretch",
         
