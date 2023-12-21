@@ -11,7 +11,7 @@ from libqtile.lazy import lazy
 from Core.Colors import violet1, violet2, violet3, violet4, violet5, violet6, textColor_dark
 
 widget_defaults = dict(
-    font="JetBrainsMono",
+    font="Terminus",
     fontsize=15,
     padding=6,
 )
@@ -51,7 +51,7 @@ screens = [
                 widget.Clock(
                     background = violet2,
                     foreground =  textColor_dark,
-                    format = "%d-%m-%Y/%H:%M",
+                    format = " %d-%m-%Y/%H:%M",
                     update_interval = 60.0,
                     mouse_callbacks={"Button1":lazy.spawn("obsidian"),}
                 ),
