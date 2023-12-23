@@ -13,11 +13,11 @@ from Core.Colors import violet1, violet2, violet3, violet4, violet5, violet6, te
 widget_defaults = dict(
     font="Terminus",
     fontsize=15,
-    padding=6,
+    padding=1,
 )
 extension_defaults = widget_defaults.copy()
 
-screens = [
+LaptopScreenOne = [
     Screen(
         
         wallpaper = "~/.config/qtile/Images/wallpaperPixel.jpg",
@@ -117,6 +117,104 @@ screens = [
 
 
                 widget.Systray(),
+                widget.TextBox(
+                    text='',
+                    foreground=violet5,
+                    padding=0,
+                    fontsize=20
+                ),
+                #Choosen Layout
+                widget.CurrentLayout(
+                    background = violet5,
+                    foreground = textColor_dark,
+                ),
+                
+                widget.TextBox(
+                    text='',
+                    foreground=violet4,
+                    background=violet5,
+                    padding=0,
+                    fontsize=20,
+                ),
+                #Groups
+                widget.GroupBox(
+                    background = violet4,
+                    inactive = violet3,
+                    active = textColor_dark,
+                    rounded=True,
+                    highlight_color= violet1,
+                    highlight_method="line",
+                    borderwidth=0,
+                    padding = 0,
+                ),
+                widget.TextBox(
+                    text='',
+                    background=violet4,
+                    foreground=violet3,
+                    padding=0,
+                    fontsize=20
+                ),
+                widget.TextBox(
+                    text=" ",
+                    foreground = textColor_dark,
+                    background = violet3,
+                ),
+                widget.KeyboardLayout(
+                    background=violet3,
+                    foreground=textColor_dark,
+                    configured_keyboards = ['de','us'],
+                ),
+                widget.TextBox(
+                    text='',
+                    background=violet3,
+                    foreground=violet2,
+                    padding=0,
+                    fontsize=20,
+                ),
+                widget.Backlight(
+                    backlight_name = "intel_backlight",
+                    format="󰍹 {percent:2.0%} ",
+                    background = violet2,
+                    foreground = textColor_dark,
+                ),
+                widget.TextBox(
+                    text='',
+                    background = violet2,
+                    foreground = violet1,
+                    padding=0,
+                    fontsize=20
+                ),
+                widget.Volume(
+                    background = violet1,
+                    foreground = textColor_dark,
+                    fmt=" {} "
+                ),
+                widget.Sep(
+                    background = violet1,
+                    linewidth=0,
+                    padding=6,
+                ),
+            ],
+            22,
+            background = "aa698b",
+            #border_width = [0,0,2,0],
+            #border_color = violet1,
+            #margin = [5,5,0,5],
+            #background_opacity = 0.5,
+        ),
+    ),
+]
+
+LaptopScreenTwo = [
+       Screen(
+        
+        wallpaper = "~/.config/qtile/Images/wallpaperPixel.jpg",
+        wallpaper_mode = "stretch",
+
+        top=bar.Bar(
+            [
+                widget.Spacer(),
+
                 widget.TextBox(
                     text='',
                     foreground=violet5,
