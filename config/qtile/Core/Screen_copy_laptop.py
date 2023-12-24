@@ -17,7 +17,7 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
-LaptopScreenOne = [
+screens = [
     Screen(
         
         wallpaper = "~/.config/qtile/Images/wallpaperPixel.jpg",
