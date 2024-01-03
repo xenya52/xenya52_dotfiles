@@ -69,7 +69,7 @@ screens = [
                 ), 
                 widget.Image(
                     filename='~/.config/qtile/Images/bar_icons/temperature.png',
-                    background=violet2,
+                    background=violet3,
                     mouse_callbacks={"Button1":lazy.spawn("kitty ncdu "),}
                 ),
                 #Weather
@@ -89,7 +89,7 @@ screens = [
                 ), 
                 widget.Image(
                     filename='~/.config/qtile/Images/bar_icons/ram.png',
-                    background=violet2,
+                    background=violet4,
                     mouse_callbacks={"Button1":lazy.spawn("kitty ncdu "),}
                 ),
                 #Memory
@@ -110,7 +110,7 @@ screens = [
                 ), 
                 widget.Image(
                     filename='~/.config/qtile/Images/bar_icons/cpu.png',
-                    background=violet2,
+                    background=violet5,
                     mouse_callbacks={"Button1":lazy.spawn("kitty bpytop"),}
                 ),
                 widget.CPU(
@@ -173,7 +173,7 @@ screens = [
                 ),
                 widget.Image(
                     filename='~/.config/qtile/Images/bar_icons/keyboard.png',
-                    background=violet2,
+                    background=violet3,
                 ),
                 widget.KeyboardLayout(
                     background=violet3,
@@ -206,7 +206,7 @@ screens = [
                 ),
                 widget.Image(
                     filename='~/.config/qtile/Images/bar_icons/volume.png',
-                    background=violet2,
+                    background=violet1,
                 ),
                 widget.Volume(
                     background = violet1,
