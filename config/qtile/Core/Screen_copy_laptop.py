@@ -17,6 +17,8 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
+mail_shortcut = "kitty asciiquarium thunderbird & obsidian & firefox https://calendar.google.com/calendar/u/0/r/tasks?pli=1 & firefox https://calendar.google.com/calendar/u/0/r?pli=1"
+
 screens = [
     Screen(
         
@@ -46,14 +48,17 @@ screens = [
                     padding=0,
                     fontsize=20,
                 ),
-
+                widget.Image(
+                    filename='~/.config/qtile/Images/bar_icons/mail.png',
+                    background=violet2,
+                    mouse_callbacks={"Button1":lazy.spawn(mail_shortcut)},
+                ),
                 #CurrentDate
                 widget.Clock(
                     background = violet2,
                     foreground =  textColor_dark,
-                    format = " %d-%m-%Y/%H:%M",
+                    format = "%d-%m-%Y/%H:%M",
                     update_interval = 60.0,
-                    mouse_callbacks={"Button1":lazy.spawn("obsidian"),}
                 ),
                 widget.TextBox(
                     text='',
@@ -62,12 +67,17 @@ screens = [
                     padding=0,
                     fontsize=20,
                 ), 
+                widget.Image(
+                    filename='~/.config/qtile/Images/bar_icons/temperature.png',
+                    background=violet3,
+                    mouse_callbacks={"Button1":lazy.spawn("kitty ncdu "),}
+                ),
                 #Weather
                 widget.OpenWeather(
                     background=violet3,
                     foreground=textColor_dark,
                     location='Regensburg', 
-                    format='{icon}{main_temp}°{units_temperature} {humidity}%',
+                    format='{main_temp}°{units_temperature} {humidity}%',
                     mouse_callbacks={"Button1":lazy.spawn("kitty curl wttr.in/Regensburg sleep 10")}
                 ),
                 widget.TextBox(
@@ -77,13 +87,18 @@ screens = [
                     padding=0,
                     fontsize=20,
                 ), 
+                widget.Image(
+                    filename='~/.config/qtile/Images/bar_icons/ram.png',
+                    background=violet4,
+                    mouse_callbacks={"Button1":lazy.spawn("kitty ncdu "),}
+                ),
                 #Memory
                 widget.Memory(
-                    format="{MemUsed: .0f}{mm}",
+                    format="{MemUsed: .0f}{mm}",
                     background=violet4,
                     foreground=textColor_dark,
                     interval=1.0,
-                    mouse_callbacks={"Button1":lazy.spawn("kitty ncdu /"),}
+                    
                 ),
                 
                 widget.TextBox(
@@ -93,12 +108,15 @@ screens = [
                     padding=0,
                     fontsize=20,
                 ), 
-
+                widget.Image(
+                    filename='~/.config/qtile/Images/bar_icons/cpu.png',
+                    background=violet5,
+                    mouse_callbacks={"Button1":lazy.spawn("kitty bpytop"),}
+                ),
                 widget.CPU(
                     background=violet5,
                     foreground=textColor_dark,
-                    format="󰘚 {load_percent}%",
-                    mouse_callbacks={"Button1":lazy.spawn("kitty bpytop"),}
+                    format="{load_percent}%",
                 ),
                 widget.ThermalZone(
                     background=violet5,
@@ -128,7 +146,6 @@ screens = [
                     background = violet5,
                     foreground = textColor_dark,
                 ),
-                
                 widget.TextBox(
                     text='',
                     foreground=violet4,
@@ -154,10 +171,9 @@ screens = [
                     padding=0,
                     fontsize=20
                 ),
-                widget.TextBox(
-                    text=" ",
-                    foreground = textColor_dark,
-                    background = violet3,
+                widget.Image(
+                    filename='~/.config/qtile/Images/bar_icons/keyboard.png',
+                    background=violet3,
                 ),
                 widget.KeyboardLayout(
                     background=violet3,
@@ -171,9 +187,13 @@ screens = [
                     padding=0,
                     fontsize=20,
                 ),
+                widget.Image(
+                    filename='~/.config/qtile/Images/bar_icons/desktop.png',
+                    background=violet2,
+                ),
                 widget.Backlight(
                     backlight_name = "intel_backlight",
-                    format="󰍹 {percent:2.0%} ",
+                    format="{percent:2.0%} ",
                     background = violet2,
                     foreground = textColor_dark,
                 ),
@@ -184,10 +204,14 @@ screens = [
                     padding=0,
                     fontsize=20
                 ),
+                widget.Image(
+                    filename='~/.config/qtile/Images/bar_icons/volume.png',
+                    background=violet1,
+                ),
                 widget.Volume(
                     background = violet1,
                     foreground = textColor_dark,
-                    fmt=" {} "
+                    fmt="{}"
                 ),
                 widget.Sep(
                     background = violet1,
