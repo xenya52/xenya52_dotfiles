@@ -20,6 +20,7 @@ extension_defaults = widget_defaults.copy()
 mail_shortcut = "kitty asciiquarium thunderbird & obsidian & firefox https://calendar.google.com/calendar/u/0/r/tasks?pli=1 & firefox https://calendar.google.com/calendar/u/0/r?pli=1"
 
 screens = [
+    #ScreenOne
     Screen(
         
         wallpaper = "~/.config/qtile/Images/wallpaperPixel.jpg",
@@ -227,10 +228,8 @@ screens = [
             #background_opacity = 0.5,
         ),
     ),
-]
-
-LaptopScreenTwo = [
-       Screen(
+    #ScreenTwo
+    Screen(
         
         wallpaper = "~/.config/qtile/Images/wallpaperPixel.jpg",
         wallpaper_mode = "stretch",

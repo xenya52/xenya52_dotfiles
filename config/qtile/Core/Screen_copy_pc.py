@@ -18,6 +18,7 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 screens = [
+    #ScreenOne
     Screen(
         wallpaper = "~/.config/qtile/Images/wallpaperPixel.jpg",
         wallpaper_mode = "stretch",
@@ -182,5 +183,87 @@ screens = [
             #background_opacity = 0.5,
         ),
     ),
+    #ScreenTwo
+    Screen(
+        
+        wallpaper = "~/.config/qtile/Images/wallpaperPixel.jpg",
+        wallpaper_mode = "stretch",
 
+        top=bar.Bar(
+            [
+                widget.Spacer(),
+
+                widget.TextBox(
+                    text='',
+                    foreground=violet4,
+                    padding=0,
+                    fontsize=20
+                ),
+                #Choosen Layout
+                widget.CurrentLayout(
+                    background = violet4,
+                    foreground = textColor_dark,
+                ),
+                
+                widget.TextBox(
+                    text='',
+                    foreground=violet3,
+                    background=violet4,
+                    padding=0,
+                    fontsize=20,
+                ),
+                #Groups
+                widget.GroupBox(
+                    background = violet3,
+                    inactive = violet2,
+                    active = textColor_dark,
+                    rounded=True,
+                    highlight_color= violet1,
+                    highlight_method="line",
+                    borderwidth=0,
+                    padding = 0,
+                ),
+                widget.TextBox(
+                    text='',
+                    background=violet3,
+                    foreground=violet2,
+                    padding=0,
+                    fontsize=20
+                ),
+                widget.TextBox(
+                    text=" ",
+                    foreground = textColor_dark,
+                    background = violet2,
+                ),
+                widget.KeyboardLayout(
+                    background=violet2,
+                    foreground=textColor_dark,
+                    configured_keyboards = ['de','us'],
+                ),
+                widget.TextBox(
+                    text='',
+                    background = violet2,
+                    foreground = violet1,
+                    padding=0,
+                    fontsize=20
+                ),
+                widget.Volume(
+                    background = violet1,
+                    foreground = textColor_dark,
+                    fmt=" {} "
+                ),
+                widget.Sep(
+                    background = violet1,
+                    linewidth=0,
+                    padding=6,
+                ),
+            ],
+            22,
+            background = "aa698b",
+            #border_width = [0,0,2,0],
+            #border_color = violet1,
+            #margin = [5,5,0,5],
+            #background_opacity = 0.5,
+        ),
+    ),
 ]
