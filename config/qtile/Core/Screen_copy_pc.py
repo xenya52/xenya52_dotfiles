@@ -238,7 +238,7 @@ screens = [
                 widget.KeyboardLayout(
                     background=violet2,
                     foreground=textColor_dark,
-                    configured_keyboards = ['de','us'],
+                    configured_keyboards = ['us', 'de'],
                 ),
                 widget.TextBox(
                     text='',
