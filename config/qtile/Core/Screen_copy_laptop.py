@@ -10,6 +10,7 @@ from libqtile.lazy import lazy
 
 from Core.Colors import violet1, violet2, violet3, violet4, violet5, violet6, textColor_dark
 
+mail_shortcut = "thunderbird"
 widget_defaults = dict(
     font="Terminus",
     fontsize=15,
