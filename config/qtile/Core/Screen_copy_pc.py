@@ -29,7 +29,11 @@ screens = [
                     linewidth=0,
                     padding=6,
                 ),
-
+                widget.Image(
+                    filename='~/.config/qtile/Images/bar_icons/mail.png',
+                    background=violet1,
+                    mouse_callbacks={"Button1":lazy.spawn(mail_shortcut)},
+                ),
                 #CurrentDate
                 widget.Clock(
                     background = violet1,
@@ -46,6 +50,11 @@ screens = [
                     fontsize=20,
                     font="JetBrainsMono"
                 ), 
+                widget.Image(
+                    filename='~/.config/qtile/Images/bar_icons/temperature.png',
+                    background=violet2,
+                    mouse_callbacks={"Button1":lazy.spawn("kitty ncdu "),}
+                ),
                 #Weather
                 widget.OpenWeather(
                     background=violet2,
@@ -62,6 +71,11 @@ screens = [
                     fontsize=20,
                     font="JetBrainsMono"
                 ), 
+                widget.Image(
+                    filename='~/.config/qtile/Images/bar_icons/ram.png',
+                    background=violet3,
+                    mouse_callbacks={"Button1":lazy.spawn("kitty ncdu "),}
+                ),
                 #Memory
                 widget.Memory(
                     format="{MemUsed: .0f}{mm}",
@@ -79,7 +93,11 @@ screens = [
                     fontsize=20,
                     font="JetBrainsMono"
                 ), 
-
+                widget.Image(
+                    filename='~/.config/qtile/Images/bar_icons/cpu.png',
+                    background=violet4,
+                    mouse_callbacks={"Button1":lazy.spawn("kitty bpytop"),}
+                ),
                 widget.CPU(
                     background=violet4,
                     foreground=textColor_dark,
@@ -150,6 +168,10 @@ screens = [
                     foreground = textColor_dark,
                     background = violet2,
                 ),
+                widget.Image(
+                    filename='~/.config/qtile/Images/bar_icons/keyboard.png',
+                    background=violet2,
+                ),
                 widget.KeyboardLayout(
                     background=violet2,
                     foreground=textColor_dark,
@@ -162,6 +184,10 @@ screens = [
                     padding=0,
                     fontsize=20,
                     font="JetBrainsMono"
+                ),
+                widget.Image(
+                    filename='~/.config/qtile/Images/bar_icons/volume.png',
+                    background=violet1,
                 ),
                 widget.Volume(
                     background = violet1,
