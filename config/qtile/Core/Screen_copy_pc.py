@@ -32,6 +32,7 @@ screens = [
                 ),
                 widget.Image(
                     filename='~/.config/qtile/Images/bar_icons/mail.png',
+                    margin_y=3,
                     background=violet1,
                     mouse_callbacks={"Button1":lazy.spawn(mail_shortcut)},
                 ),
@@ -53,6 +54,7 @@ screens = [
                 ), 
                 widget.Image(
                     filename='~/.config/qtile/Images/bar_icons/temperature.png',
+                    margin_y=3,
                     background=violet2,
                     mouse_callbacks={"Button1":lazy.spawn("kitty ncdu "),}
                 ),
@@ -74,6 +76,7 @@ screens = [
                 ), 
                 widget.Image(
                     filename='~/.config/qtile/Images/bar_icons/ram.png',
+                    margin_y=3,
                     background=violet3,
                     mouse_callbacks={"Button1":lazy.spawn("kitty ncdu "),}
                 ),
@@ -96,6 +99,7 @@ screens = [
                 ), 
                 widget.Image(
                     filename='~/.config/qtile/Images/bar_icons/cpu.png',
+                    margin_y=3,
                     background=violet4,
                     mouse_callbacks={"Button1":lazy.spawn("kitty bpytop"),}
                 ),
@@ -171,6 +175,7 @@ screens = [
                 ),
                 widget.Image(
                     filename='~/.config/qtile/Images/bar_icons/keyboard.png',
+                    margin_y=3,
                     background=violet2,
                 ),
                 widget.KeyboardLayout(
@@ -188,6 +193,7 @@ screens = [
                 ),
                 widget.Image(
                     filename='~/.config/qtile/Images/bar_icons/volume.png',
+                    margin_y=3,
                     background=violet1,
                 ),
                 widget.Volume(
