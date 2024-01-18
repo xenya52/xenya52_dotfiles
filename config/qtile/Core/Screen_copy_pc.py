@@ -10,6 +10,8 @@ from libqtile.lazy import lazy
 
 from Core.Colors import violet1, violet2, violet3, violet4, violet5, violet6, textColor_dark
 
+mail_shortcut = "thunderbird"
+
 widget_defaults = dict(
     font="Terminus",
     fontsize=15,
@@ -168,11 +170,6 @@ screens = [
                     fontsize=20,
                     font="JetBrainsMono"
                 ),
-                widget.TextBox(
-                    text="",
-                    foreground = textColor_dark,
-                    background = violet2,
-                ),
                 widget.Image(
                     filename='~/.config/qtile/Images/bar_icons/keyboard.png',
                     margin_y=3,
@@ -227,24 +224,10 @@ screens = [
 
                 widget.TextBox(
                     text='',
-                    foreground=violet4,
+                    foreground=violet3,
                     padding=0,
                     fontsize=20
                 ),
-                #Choosen Layout
-                widget.CurrentLayout(
-                    background = violet4,
-                    foreground = textColor_dark,
-                ),
-                
-                widget.TextBox(
-                    text='',
-                    foreground=violet3,
-                    background=violet4,
-                    padding=0,
-                    fontsize=20,
-                ),
-                #Groups
                 widget.GroupBox(
                     background = violet3,
                     inactive = violet2,
@@ -255,39 +238,22 @@ screens = [
                     borderwidth=0,
                     padding = 0,
                 ),
+                #CurrentDate
+                widget.Clock(
+                    background = violet3,
+                    foreground =  textColor_dark,
+                    format = "%d-%m-%Y/%H:%M",
+                    update_interval = 60.0,
+                    mouse_callbacks={"Button1":lazy.spawn("obsidian"),}
+                ),
                 widget.TextBox(
-                    text='',
-                    background=violet3,
-                    foreground=violet2,
+                    text='',
+                    foreground=violet3,
                     padding=0,
-                    fontsize=20
-                ),
-                widget.TextBox(
-                    text=" ",
-                    foreground = textColor_dark,
-                    background = violet2,
-                ),
-                widget.KeyboardLayout(
-                    background=violet2,
-                    foreground=textColor_dark,
-                    configured_keyboards = ['us', 'de'],
-                ),
-                widget.TextBox(
-                    text='',
-                    background = violet2,
-                    foreground = violet1,
-                    padding=0,
-                    fontsize=20
-                ),
-                widget.Volume(
-                    background = violet1,
-                    foreground = textColor_dark,
-                    fmt=" {} "
-                ),
-                widget.Sep(
-                    background = violet1,
-                    linewidth=0,
-                    padding=6,
+                    fontsize=20,
+                    font="JetBrainsMono"
+                ), 
+                widget.Spacer(
                 ),
             ],
             22,
