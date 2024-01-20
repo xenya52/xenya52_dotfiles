@@ -10,7 +10,6 @@ from libqtile.lazy import lazy
 
 from Core.Colors import violet1, violet2, violet3, violet4, violet5, violet6, textColor_dark
 
-mail_shortcut = "thunderbird"
 widget_defaults = dict(
     font="Terminus",
     fontsize=15,
@@ -18,7 +17,11 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
-mail_shortcut = "kitty asciiquarium thunderbird & obsidian & firefox https://calendar.google.com/calendar/u/0/r/tasks?pli=1 & firefox https://calendar.google.com/calendar/u/0/r?pli=1"
+def mail_shortcut():
+    lazy.spawn("thunderbird")
+    lazy.spawn("obsidian")
+    lazy.spawn("firefox https://calendar.google.com/calendar/u/0/r/tasks?pli=1")
+    lazy.spawn("firefox https://calendar.google.com/calendar/u/0/r?pli=1")
 
 screens = [
     #ScreenOne
@@ -54,7 +57,7 @@ screens = [
                     filename='~/.config/qtile/Images/bar_icons/mail.png',
                     margin_y=3,
                     background=violet2,
-                    mouse_callbacks={"Button1":lazy.spawn(mail_shortcut)},
+                    mouse_callbacks={"Button1":lazy.spawn("thunderbird")},
                 ),
                 #CurrentDate
                 widget.Clock(
@@ -74,7 +77,7 @@ screens = [
                     filename='~/.config/qtile/Images/bar_icons/temperature.png',
                     margin_y=3,
                     background=violet3,
-                    mouse_callbacks={"Button1":lazy.spawn("kitty ncdu "),}
+                    mouse_callbacks={"Button1":lazy.spawn("kitty curl wttr.in/Regensburg sleep 10")}
                 ),
                 #Weather
                 widget.OpenWeather(
@@ -82,7 +85,6 @@ screens = [
                     foreground=textColor_dark,
                     location='Regensburg', 
                     format='{main_temp}°{units_temperature} {humidity}%',
-                    mouse_callbacks={"Button1":lazy.spawn("kitty curl wttr.in/Regensburg sleep 10")}
                 ),
                 widget.TextBox(
                     text='',

@@ -10,7 +10,11 @@ from libqtile.lazy import lazy
 
 from Core.Colors import violet1, violet2, violet3, violet4, violet5, violet6, textColor_dark
 
-mail_shortcut = "thunderbird"
+def mail_shortcut():
+    lazy.spawn("thunderbird")
+    lazy.spawn("obsidian")
+    lazy.spawn("firefox https://calendar.google.com/calendar/u/0/r/tasks?pli=1")
+    lazy.spawn("firefox https://calendar.google.com/calendar/u/0/r?pli=1")
 
 widget_defaults = dict(
     font="Terminus",
@@ -36,7 +40,7 @@ screens = [
                     filename='~/.config/qtile/Images/bar_icons/mail.png',
                     margin_y=3,
                     background=violet1,
-                    mouse_callbacks={"Button1":lazy.spawn(mail_shortcut)},
+                    mouse_callbacks={"Button1":lazy.spawn("thunderbird")},
                 ),
                 #CurrentDate
                 widget.Clock(
@@ -44,7 +48,6 @@ screens = [
                     foreground =  textColor_dark,
                     format = "%d-%m-%Y/%H:%M",
                     update_interval = 60.0,
-                    mouse_callbacks={"Button1":lazy.spawn("obsidian"),}
                 ),
                 widget.TextBox(
                     text='',
@@ -58,7 +61,7 @@ screens = [
                     filename='~/.config/qtile/Images/bar_icons/temperature.png',
                     margin_y=3,
                     background=violet2,
-                    mouse_callbacks={"Button1":lazy.spawn("kitty ncdu "),}
+                    mouse_callbacks={"Button1":lazy.spawn("kitty curl wttr.in/Regensburg sleep 10")}
                 ),
                 #Weather
                 widget.OpenWeather(
@@ -66,7 +69,7 @@ screens = [
                     foreground=textColor_dark,
                     location='Regensburg', 
                     format='{main_temp}°{units_temperature} {humidity}%',
-                    mouse_callbacks={"Button1":lazy.spawn("kitty curl wttr.in/Regensburg sleep 10")}
+                    
                 ),
                 widget.TextBox(
                     text='',
