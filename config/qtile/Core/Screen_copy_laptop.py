@@ -7,6 +7,7 @@
 from libqtile import bar, widget, hook, layout
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
+from libqtile import qtile
 
 from Core.Colors import violet1, violet2, violet3, violet4, violet5, violet6, textColor_dark
 
@@ -18,10 +19,10 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 def mail_shortcut():
-    lazy.spawn("thunderbird")
-    lazy.spawn("obsidian")
-    lazy.spawn("firefox https://calendar.google.com/calendar/u/0/r/tasks?pli=1")
-    lazy.spawn("firefox https://calendar.google.com/calendar/u/0/r?pli=1")
+    qtile.cmd_spawn("thunderbird")
+    qtile.cmd_spawn("obsidian")
+    qtile.cmd_spawn("firefox 'https://calendar.google.com/calendar/u/0/r/tasks?pli=1'")
+    qtile.cmd_spawn("firefox 'https://calendar.google.com/calendar/u/0/r?pli=1'")
 
 screens = [
     #ScreenOne
@@ -57,7 +58,7 @@ screens = [
                     filename='~/.config/qtile/Images/bar_icons/mail.png',
                     margin_y=3,
                     background=violet2,
-                    mouse_callbacks={"Button1":lazy.spawn("thunderbird")},
+                    mouse_callbacks={'Button1': mail_shortcut()}
                 ),
                 #CurrentDate
                 widget.Clock(
