@@ -19,9 +19,9 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 def mail_shortcut():
-    qtile.cmd_spawn("thunderbird")
-    qtile.cmd_spawn("obsidian")
-    qtile.cmd_spawn("firefox 'https://calendar.google.com/calendar/u/0/r/tasks?pli=1'")
+    qtile.cmd_spawn("thunderbird"),
+    qtile.cmd_spawn("obsidian"),
+    qtile.cmd_spawn("firefox 'https://calendar.google.com/calendar/u/0/r/tasks?pli=1'"),
     qtile.cmd_spawn("firefox 'https://calendar.google.com/calendar/u/0/r?pli=1'")
 
 screens = [
