@@ -18,17 +18,10 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 def mail_shortcut():
-<<<<<<< HEAD
-    qtile.cmd_spawn("thunderbird"),
-    qtile.cmd_spawn("obsidian"),
-    qtile.cmd_spawn("firefox 'https://calendar.google.com/calendar/u/0/r/tasks?pli=1'"),
-    qtile.cmd_spawn("firefox 'https://calendar.google.com/calendar/u/0/r?pli=1'")
-=======
     lazy.spawn("thunderbird")
     lazy.spawn("obsidian")
     lazy.spawn("firefox https://calendar.google.com/calendar/u/0/r/tasks?pli=1")
     lazy.spawn("firefox https://calendar.google.com/calendar/u/0/r?pli=1")
->>>>>>> parent of 7baeeb2 (fixed mail widget)
 
 screens = [
     #ScreenOne
