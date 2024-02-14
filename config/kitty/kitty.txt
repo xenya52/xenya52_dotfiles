@@ -1,0 +1,65 @@
+
+using System;
+using System.Collections.Generic;
+
+public enum ArithmeticOperation
+{
+    Plus,
+    Minus,
+    Multiply,
+    Divide,
+    Modulo, // Additional operation
+    SquareRoot // Additional operation
+}
+
+public class ModularCalculator
+{
+    private readonly Dictionary<ArithmeticOperation, Func<double, double, double>> operations;
+
+    public ModularCalculator(Dictionary<ArithmeticOperation, Func<double, double, double>> operations)
+    {
+        this.operations = operations;
+        // Ensure there's a lambda for Divide that handles division by zero
+        this.operations[ArithmeticOperation.Divide] = this.operations.ContainsKey(ArithmeticOperation.Divide)
+            ? this.operations[ArithmeticOperation.Divide]
+            : (x, y) => y != 0 ? x / y : throw new ArgumentException("Cannot divide by zero.");
+    }
+
+    public double Calculate(ArithmeticOperation operation, double a, double b)
+    {
+        if (operations.ContainsKey(operation))
+        {
+            return operations[operation](a, b);
+        }
+        else
+        {
+            throw new InvalidOperationException("Operation not defined.");
+        }
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        var operations = new Dictionary<ArithmeticOperation, Func<double, double, double>>
+        {
+            { ArithmeticOperation.Plus, (a, b) => a + b },
+            { ArithmeticOperation.Minus, (a, b) => a - b },
+            { ArithmeticOperation.Multiply, (a, b) => a * b },
+            { ArithmeticOperation.Divide, (a, b) => b != 0 ? a / b : double.PositiveInfinity }, // Custom division behavior
+            { ArithmeticOperation.Modulo, (a, b) => a % b },
+            { ArithmeticOperation.SquareRoot, (a, b) => Math.Pow(a, 1 / b) } // Assuming 'b' is the degree of the root
+        };
+
+        ModularCalculator calculator = new ModularCalculator(operations);
+
+        // Example calculations
+        Console.WriteLine($"Addition: {calculator.Calculate(ArithmeticOperation.Plus, 10, 5)}");
+        Console.WriteLine($"Subtraction: {calculator.Calculate(ArithmeticOperation.Minus, 10, 5)}");
+        Console.WriteLine($"Multiplication: {calculator.Calculate(ArithmeticOperation.Multiply, 10, 5)}");
+        Console.WriteLine($"Division: {calculator.Calculate(ArithmeticOperation.Divide, 10, 0)}"); // Should handle division by zero
+        Console.WriteLine($"Modulo: {calculator.Calculate(ArithmeticOperation.Modulo, 10, 5)}");
+        Console.WriteLine($"SquareRoot: {calculator.Calculate(ArithmeticOperation.SquareRoot, 16, 2)}"); // Should calculate square root of 16
+    }
+}
