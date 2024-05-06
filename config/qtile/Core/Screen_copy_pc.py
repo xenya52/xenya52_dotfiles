@@ -218,7 +218,7 @@ screens = [
     #ScreenTwo
     Screen(
         
-        wallpaper = "~/.config/qtile/Images/wallpaperPixelSecondary.jpg",
+        wallpaper = "~/.config/qtile/Images/wallpaperSecondary.jpg",
         wallpaper_mode = "stretch",
 
         top=bar.Bar(
