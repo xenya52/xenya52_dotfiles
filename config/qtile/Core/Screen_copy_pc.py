@@ -208,7 +208,7 @@ screens = [
                 ),
             ],
             18,
-            background = "aa698b",
+            background = "aa698b00",
             #border_width = [0,0,2,0],
             #border_color = violet1,
             #margin = [5,5,0,5],
@@ -218,7 +218,7 @@ screens = [
     #ScreenTwo
     Screen(
         
-        wallpaper = "~/.config/qtile/Images/wallpaperSecondary.jpg",
+        wallpaper = "~/.config/qtile/Images/wallpaperPixelSecondary.jpg",
         wallpaper_mode = "stretch",
 
         top=bar.Bar(
