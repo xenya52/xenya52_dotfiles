@@ -2,5 +2,5 @@
 export JAVA_HOME=/opt/homebrew/opt/openjdk@23/
 export PATH=$JAVA_HOME/bin:$PATH
 
-# A cute greeting
-pokemon-colorscripts -r
+# ASCII pictures for my .config/minimal_zshrc_addition
+~/.config/minimal_zshrc_addition/run.sh
