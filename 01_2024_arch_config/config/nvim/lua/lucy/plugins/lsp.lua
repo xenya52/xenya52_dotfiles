@@ -8,8 +8,8 @@ return {
     config = function ()
       require("mason").setup()
       require("mason-lspconfig").setup({
-        -- Liste der zu installierenden Language Server
-        -- Siehe https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
+        -- Language servers to install.
+        -- See https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
         ensure_installed = {
           "lua_ls",
           "pylsp",
@@ -17,8 +17,8 @@ return {
         },
       })
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
-      -- Language Server Konfiguration
-      -- Weitere siehe https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+      -- Language server configuration.
+      -- See also https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
       require("lspconfig").pylsp.setup({
         capabilities = capabilities,
       })

@@ -4,7 +4,7 @@ return {
     opts = function(_, opts)
       local dashboard = require("alpha.themes.dashboard")
 
-      -- WICHTIG: dashboard.layout muss erhalten bleiben!
+      -- Keep dashboard.layout intact.
       opts.layout = dashboard.config.layout
       opts.opts = dashboard.config.opts
       opts.section = dashboard.section

@@ -1,0 +1,28 @@
+{
+  "interface/theme/color_preset": "Custom",
+  "interface/theme/base_color": "#1D1D22",
+  "interface/theme/accent_color": "#D977A9",
+  "interface/theme/use_system_accent_color": false,
+  "interface/theme/contrast": 0.18,
+  "text_editor/theme/color_theme": "Sakura-Nocturne",
+  "visual_editor_colors": {
+    "editors/visual_editors/connection_colors/scalar_color": "#EDA3B1",
+    "editors/visual_editors/connection_colors/vector2_color": "#F1A1CF",
+    "editors/visual_editors/connection_colors/vector3_color": "#D78BDF",
+    "editors/visual_editors/connection_colors/vector4_color": "#F8D3DC",
+    "editors/visual_editors/connection_colors/boolean_color": "#E77B87",
+    "editors/visual_editors/connection_colors/transform_color": "#F2B7A9",
+    "editors/visual_editors/connection_colors/sampler_color": "#D977A9",
+    "editors/visual_editors/category_colors/output_color": "#43232F",
+    "editors/visual_editors/category_colors/color_color": "#4B2A3A",
+    "editors/visual_editors/category_colors/conditional_color": "#40233F",
+    "editors/visual_editors/category_colors/input_color": "#4D2634",
+    "editors/visual_editors/category_colors/scalar_color": "#3A2638",
+    "editors/visual_editors/category_colors/textures_color": "#3F283A",
+    "editors/visual_editors/category_colors/transform_color": "#432941",
+    "editors/visual_editors/category_colors/utility_color": "#26262C",
+    "editors/visual_editors/category_colors/vector_color": "#34263F",
+    "editors/visual_editors/category_colors/special_color": "#4C2E3A",
+    "editors/visual_editors/category_colors/particle_color": "#3B2947"
+  }
+}

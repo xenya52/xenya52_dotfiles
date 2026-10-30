@@ -1,11 +1,11 @@
 return {
   "hrsh7th/nvim-cmp",
   dependencies = {
-    -- Autocomplete Quellen
-    -- Siehe https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
+    -- Autocompletion sources.
+    -- See https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
     -- Buffer
     "hrsh7th/cmp-buffer",
-    -- Pfade
+    -- Paths.
     "hrsh7th/cmp-path",
     -- Language Server
     "hrsh7th/cmp-nvim-lsp",

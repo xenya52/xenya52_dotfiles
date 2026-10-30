@@ -3,19 +3,19 @@ return {
   tag = '0.1.6',
   dependencies = { 'nvim-lua/plenary.nvim' },
   config = function ()
-    -- Leader he für „help“ - oder was auch immer für dich Sinn ergibt.
+    -- Use leader he for help tags.
     vim.keymap.set("n", "<leader>he", ":Telescope help_tags<CR>")
 
-    -- In Datei suchen (fi - find)
+    -- Search in the current file (fi).
     vim.keymap.set("n", "<leader>fi", ":Telescope current_buffer_fuzzy_find<CR>")
 
-    -- Dateien finden (ff - find files)
+    -- Find files (ff).
     vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>")
 
-    -- Grep (fg - find grep)
+    -- Search file contents with grep (fg).
     vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>")
 
-    -- Was es sonst noch gibt
+    -- See the available pickers:
     -- https://github.com/nvim-telescope/telescope.nvim?tab=readme-ov-file#pickers
   end
 }

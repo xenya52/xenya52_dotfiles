@@ -1,0 +1,10 @@
+<application>
+  <component name="LafManager">
+    <laf themeId="8b40a288-df63-4f6c-b74b-43b042e8958b" />
+    <lafs-to-previous-schemes>
+      <laf-to-scheme laf="3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d" scheme="_@user_Zen Sakura" />
+      <laf-to-scheme laf="8b40a288-df63-4f6c-b74b-43b042e8958b" scheme="_@user_Sakura Nocturne" />
+      <laf-to-scheme laf="ExperimentalDark" scheme="_@user_Dark" />
+    </lafs-to-previous-schemes>
+  </component>
+</application>

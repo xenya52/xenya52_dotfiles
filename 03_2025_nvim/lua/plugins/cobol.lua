@@ -1,6 +1,6 @@
 return {
   {
     "Jorenar/COBOL.vim",
-    ft = { "cobol" }, -- Wird nur bei COBOL-Dateien geladen
+    ft = { "cobol" }, -- Load only for COBOL files.
   },
 }

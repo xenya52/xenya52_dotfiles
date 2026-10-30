@@ -1,24 +1,24 @@
--- Zeilennummern
+-- Show line numbers.
 vim.wo.number = true
 
--- System-Clipboard verwenden
+-- Use the system clipboard.
 vim.o.clipboard = 'unnamedplus'
 
 
--- Beim Wiederöffnen einer Datei zur letzten Position springen
+-- Restore the cursor position when reopening a file.
 vim.api.nvim_command([[au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif]])
 
 
--- Einrückung mit 4 Spaces als Standard
+-- Use four spaces for indentation by default.
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
 
 
--- Aktuelle Einrückung fortführen
+-- Continue the current indentation.
 vim.o.smartindent = true
 
 
--- Undo-Historie abspeichern
+-- Persist undo history.
 vim.opt.undofile = true

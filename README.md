@@ -1,4 +1,21 @@
-## Colors
+## Sakura Nocturne (2026)
+
+Das aktuelle Theme für [Kitty](02_2025_CLI/.config/kitty/), [Neovim/LazyVim](03_2025_nvim/) sowie [IntelliJ, Rider, Godot und Godot Mono](05_2026_sakura_nocturne/) verwendet `#EDA3B1` als Hauptschriftfarbe. Der Editorhintergrund ist `#17171B`, Oberflächen liegen zwischen `#0E0E11` und `#26262C`. Akzente sind Pink, Magenta und Rot.
+
+| Rolle | Farbe |
+| --- | --- |
+| Schwarz | `#0E0E11` |
+| Editor | `#17171B` |
+| Oberfläche | `#1D1D22` |
+| Erhöhte Oberfläche | `#26262C` |
+| Haupttext | `#EDA3B1` |
+| Heller Text | `#F8D3DC` |
+| Akzent | `#D977A9` |
+| Pink | `#F1A1CF` |
+| Magenta | `#D78BDF` |
+| Rot | `#E77B87` |
+
+## Previous palette (2025)
 
 ### General Colors
 | **Element**                  | **Hex Code**    | **Color Name**  |

@@ -1,7 +1,7 @@
 return {
   'kyazdani42/nvim-tree.lua',
   dependencies = {
-     -- für schönere Icons
+     -- Add file icons.
     'kyazdani42/nvim-web-devicons',
   },
   config = function()
@@ -11,10 +11,10 @@ return {
       },
     })
 
-    -- Beispiel mit sf - show files
+    -- Use sf to toggle the file tree.
     vim.keymap.set("n", "<leader>sf", ":NvimTreeToggle<CR>")
 
-    -- Zur Datei springen (jump file), danach zentrieren (zz)
+    -- Jump to the current file, then center the view (zz).
     vim.keymap.set("n", "<leader>jf", ":NvimTreeFindFile<CR>zz")
   end
 }

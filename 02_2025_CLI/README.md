@@ -1,6 +1,6 @@
 # CLI dotfiles
 
-Here are my dotfiles for the GPU based Terminal Kitty.
+Here are my dotfiles for the GPU based terminal Kitty. `kitty.conf` includes the Sakura Nocturne palette from `.config/kitty/sakura-nocturne.conf`.
 
-`~/config` - Here is the basic config for my kitty termnial
+Copy both files in `.config/kitty/` to `~/.config/kitty/`. Keep the `include sakura-nocturne.conf` line in `kitty.conf`.
 `~/zshrc` - Autostart configuration for my terminal
