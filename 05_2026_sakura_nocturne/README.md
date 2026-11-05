@@ -15,3 +15,9 @@ Ein dunkles Theme für IntelliJ, Rider, Godot und Godot Mono. Kitty und Neovim l
 Die Werte für visuelle Shader stehen in `godot/sakura-settings.json`. Die Datei enthält nur Theme-Einstellungen und keine persönlichen Editor- oder Projektpfade. Auf macOS können bei geschlossenem Godot alle Einstellungen mit `python3 godot/install_macos.py` übernommen werden; das Skript legt vorher eine Sicherung der vorhandenen Editor-Einstellungen an. `godot/build/` enthält die Erzeugungs- und Prüfskripte.
 
 Die ursprünglichen ZIP-Pakete liegen unter `releases/`; die bearbeitbaren Einzeldateien liegen in den jeweiligen Konfigurationsordnern.
+
+## Codex Desktop und CLI
+
+`codex/Sakura-Nocturne-Codex.theme.txt` enthält das importierbare Dark-Theme für die Desktop-App. Unter **Settings → Appearance** das Dark-Theme auswählen, auf **Import** klicken und den gesamten Inhalt der Datei einfügen. Die Farben sind `#EDA3B1` für die Schrift, `#17171B` für den Hintergrund und `#D977A9` für Akzente. Als integriertes Codefarbschema ist Rose Pine Moon gewählt; die Desktop-App importiert aktuell nur vorhandene Codefarbschemata.
+
+`codex/sakura-nocturne.tmTheme` ist das eigene Syntax-Theme für die Codex CLI. Die Datei nach `~/.codex/themes/` kopieren und mit `/theme` in der CLI auswählen. `codex/build_sakura_codex.py` erzeugt beide Dateien aus der im Skript definierten Palette erneut.

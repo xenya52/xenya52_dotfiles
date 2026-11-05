@@ -1,0 +1,16 @@
+{
+  "background": "#17171B",
+  "black": "#0E0E11",
+  "panel": "#1D1D22",
+  "raised": "#26262C",
+  "border": "#39343C",
+  "foreground": "#EDA3B1",
+  "bright": "#F8D3DC",
+  "muted": "#AD8996",
+  "selection": "#543245",
+  "accent": "#D977A9",
+  "pink": "#F1A1CF",
+  "magenta": "#D78BDF",
+  "rose": "#F2B7A9",
+  "red": "#E77B87"
+}
